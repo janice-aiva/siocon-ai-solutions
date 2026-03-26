@@ -29,6 +29,10 @@
             font-family: 'Playfair Display', serif;
         }
 
+        h1 {
+            letter-spacing: -0.02em;
+        }
+
         .text-main { color: var(--text-main); }
         .text-secondary { color: var(--text-secondary); }
         .text-accent { color: var(--accent); }
@@ -132,6 +136,94 @@
         #mobile-menu.active {
             display: block;
         }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fadeUp 0.9s ease forwards;
+        }
+
+        .fade-up-delay-1 {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fadeUp 0.9s ease forwards;
+            animation-delay: 0.12s;
+        }
+
+        .fade-up-delay-2 {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fadeUp 0.9s ease forwards;
+            animation-delay: 0.24s;
+        }
+
+        .fade-up-delay-3 {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fadeUp 0.9s ease forwards;
+            animation-delay: 0.36s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-card {
+            position: relative;
+            transition: transform 0.45s ease, box-shadow 0.45s ease;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            inset: -18px;
+            background: radial-gradient(circle, rgba(200,169,126,0.22) 0%, rgba(200,169,126,0.08) 40%, transparent 72%);
+            filter: blur(24px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-card-inner {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 60px;
+            height: 520px;
+            background: #ffffff;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 24px 60px -20px rgba(31,31,31,0.18);
+        }
+
+        .hero-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transform: scale(1.05);
+            transition: transform 0.6s ease;
+        }
+
+        .hero-card:hover .hero-image {
+            transform: scale(1.09);
+        }
+
+        @media (max-width: 1024px) {
+            .fade-up,
+            .fade-up-delay-1,
+            .fade-up-delay-2,
+            .fade-up-delay-3 {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -175,35 +267,46 @@
     <section class="relative pt-40 pb-24 lg:pt-56 lg:pb-40 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-                <div class="lg:w-3/5 text-left">
-                    <span class="inline-block bg-white border border-[#E8E1D8] px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold text-accent mb-6 shadow-sm">
-    AI-Powered VA • Founder-Led Support </span>
-                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-medium text-main leading-[1.05] mb-8">
+                <div class="lg:w-3/5 text-left fade-up">
+                    <span class="inline-block bg-white border border-[#E8E1D8] px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold text-accent mb-6 shadow-sm fade-up-delay-1">
+                        AI-Powered VA • Founder-Led Support
+                    </span>
+
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-medium text-main leading-[1.05] mb-8 fade-up-delay-2">
                         AI-Powered Virtual Support for <span class="italic font-normal">Founders</span> Who Want to Scale Without Hiring Full-Time
                     </h1>
-                    <p class="text-secondary text-lg md:text-xl max-w-2xl leading-relaxed mb-12">
-    I help busy founders and growing businesses stay on top of admin, operations, project coordination, CRM management, lead generation, and client communication through smart, reliable support, backed by a trained remote team when needed.
-</p>
 
-<p class="text-sm text-secondary -mt-6 mb-12">
-    Supporting founders across admin, operations, and growth so they can focus on scaling.
-</p>
-                    <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <p class="text-secondary text-lg md:text-xl max-w-2xl leading-relaxed mb-12 fade-up-delay-3">
+                        I help busy founders and growing businesses stay on top of admin, operations, project coordination, CRM management, lead generation, and client communication through smart, reliable support, backed by a trained remote team when needed.
+                    </p>
+
+                    <p class="text-sm text-secondary -mt-6 mb-12 fade-up-delay-3">
+                        Supporting founders across admin, operations, and growth so they can focus on scaling.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-6 fade-up-delay-3">
                         <a href="#contact" class="btn-primary w-full sm:w-auto">Get Support Now</a>
                         <a href="#services" class="btn-secondary w-full sm:w-auto">View Services</a>
                     </div>
                 </div>
-                <div class="lg:w-2/5 relative hidden lg:block">
+
+                <div class="lg:w-2/5 relative hidden lg:block fade-up-delay-2">
                     <div class="hero-shape w-[480px] h-[480px] absolute -top-12 -right-12"></div>
-                    <div class="relative z-10 w-full h-[520px] bg-white rounded-[60px] shadow-2xl border border-white/50 overflow-hidden">
-                        <div class="absolute inset-0 bg-neutral-100 flex items-center justify-center">
-                           <div class="w-24 h-24 border border-accent/20 rounded-full flex items-center justify-center">
-                               <div class="w-16 h-16 bg-accent/10 rounded-full animate-pulse"></div>
-                           </div>
-                        </div>
-                        <div class="absolute bottom-10 left-10 right-10 p-8 bg-white/80 backdrop-blur-md rounded-3xl border border-white/20">
-                            <p class="serif text-lg italic text-main mb-4">"We help you build better systems so you can focus on the vision."</p>
-                            <p class="text-[10px] uppercase tracking-widest font-bold text-accent">Siocon AI Solutions</p>
+
+                    <div class="hero-card">
+                        <div class="hero-card-inner">
+                            <img
+                                src="/janice-siocon.png"
+                                alt="Janice Siocon"
+                                class="hero-image"
+                            />
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+
+                            <div class="absolute bottom-10 left-10 right-10 p-8 bg-white/82 backdrop-blur-md rounded-3xl border border-white/20">
+                                <p class="serif text-lg italic text-main mb-4">"We help you build better systems so you can focus on the vision."</p>
+                                <p class="text-[10px] uppercase tracking-widest font-bold text-accent">Siocon AI Solutions</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -287,7 +390,7 @@
                     <h3 class="text-xl font-semibold mb-2">Simple Website Setup</h3>
                     <p class="text-secondary text-sm mb-6">Create clean, modern landing pages to showcase services and generate new enquiries.</p>
                     <div class="pt-6 border-t border-[#E8E1D8] inline-block">
-                        <p class="text-main font-semibold">Flexible support from <span class="text-accent text-2xl ml-1">$10</span> <span class="text-xs uppercase tracking-widest font-bold">USD/HR</span></p>
+                        <p class="text-main font-semibold">Flexible support from <span class="text-7xl font-semibold mx-4 tracking-tighter" style="background: linear-gradient(135deg, #C8A97E, #E6D3B3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">$10</span> <span class="text-xs uppercase tracking-widest font-bold">USD/HR</span></p>
                         <p class="text-[10px] text-secondary mt-1 uppercase tracking-widest">Tailored to your business needs</p>
                     </div>
                 </div>
@@ -348,15 +451,16 @@
             <div class="flex flex-col lg:flex-row items-center gap-20">
                 <div class="lg:w-1/2">
                     <div class="relative max-w-md mx-auto">
-                        <div class="relative h-[420px] bg-white rounded-[60px] shadow-2xl overflow-hidden border border-white/40">
-    <img
-        src="/janice-siocon.png"
-        alt="Janice Siocon"
-        class="w-full h-full object-cover object-top scale-[1.02]"
-    />
+                        <div class="relative h-[420px] bg-white rounded-[60px] shadow-2xl overflow-hidden border border-white/40 hover:shadow-[0_0_40px_rgba(0,0,0,0.15)] transition duration-500">
+                            <img
+                                src="/janice-siocon.png"
+                                alt="Janice Siocon"
+                                class="w-full h-full object-cover object-top scale-[1.02]"
+                            />
 
-    <div class="relative h-[420px] rounded-[60px] overflow-hidden shadow-2xl border border-white/40 hover:shadow-[0_0_40px_rgba(0,0,0,0.15)] transition duration-500"></div>
-</div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                        </div>
+
                         <div class="absolute bottom-6 right-6 bg-white p-6 rounded-3xl shadow-xl border border-[#E8E1D8] max-w-[220px]">
                             <div class="flex items-center space-x-3 mb-2">
                                 <div class="w-2 h-2 rounded-full bg-green-500"></div>
@@ -366,6 +470,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="lg:w-1/2">
                     <span class="text-accent uppercase tracking-[0.2em] text-[11px] font-bold mb-6 block">The Founder</span>
                     <h2 class="text-4xl md:text-5xl font-semibold mb-10 leading-tight">Meet Janice Siocon</h2>
@@ -394,12 +499,12 @@
                 <div class="flex items-baseline justify-center mb-8">
                     <span class="text-secondary text-xl font-light italic">from</span>
                     <span class="text-7xl font-semibold mx-4 tracking-tighter" style="background: linear-gradient(135deg, #C8A97E, #E6D3B3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-    $10
-</span>
+                        $10
+                    </span>
                     <span class="text-secondary text-lg">USD / hr</span>
                 </div>
                 <p class="text-secondary text-lg max-w-lg mx-auto leading-relaxed mb-12">No full-time hire required. Get premium support when you need it and scale seamlessly as your workload grows.</p>
-                <a href="#contact" class="btn-primary">Start Your Support</a>
+                <a href="#contact" class="btn-primary">Get Support Now</a>
             </div>
         </div>
     </section>
@@ -476,7 +581,7 @@
                                 <label class="text-[10px] uppercase tracking-widest font-bold text-secondary mb-4 block">Message</label>
                                 <textarea rows="6" required class="w-full bg-[#FAF8F5] border border-[#E8E1D8] rounded-2xl px-6 py-5 focus:outline-none focus:border-accent transition-colors"></textarea>
                             </div>
-                            <button type="submit" class="btn-primary w-full py-6 uppercase tracking-widest text-xs font-bold">Get Support</button>
+                            <button type="submit" class="btn-primary w-full py-6 uppercase tracking-widest text-xs font-bold">Send Enquiry</button>
                             <p id="form-msg" class="hidden mt-8 text-center text-green-600 font-medium bg-green-50 py-4 rounded-2xl border border-green-100">Message received. We'll be in touch shortly.</p>
                         </form>
                     </div>
@@ -505,7 +610,8 @@
                     &copy; <span id="year"></span> Siocon AI Solutions. Created by Janice Siocon.
                 </div>
                 <div class="flex space-x-10">
-                 
+                    <span class="hover:text-accent cursor-pointer">Privacy Policy</span>
+                    <span class="hover:text-accent cursor-pointer">Terms</span>
                 </div>
                 <div>All rights reserved.</div>
             </div>
