@@ -140,7 +140,6 @@
                     <span class="serif text-2xl font-semibold tracking-tight text-main">Siocon AI Solutions</span>
                 </div>
                 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-10">
                     <a href="#" class="text-sm font-medium text-secondary hover:text-main transition-colors">Home</a>
                     <a href="#services" class="text-sm font-medium text-secondary hover:text-main transition-colors">Services</a>
@@ -148,7 +147,6 @@
                     <a href="#contact" class="btn-primary py-3 px-8 text-xs uppercase tracking-widest">Get Support Now</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <button id="menu-toggle" class="md:hidden p-2 text-main">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -156,7 +154,6 @@
                 </button>
             </div>
 
-            <!-- Mobile Menu Items -->
             <div id="mobile-menu" class="md:hidden border-t border-gray-100">
                 <div class="flex flex-col space-y-4 pb-6">
                     <a href="#" class="text-secondary hover:text-main font-medium">Home</a>
@@ -327,7 +324,6 @@
                         behavior: 'smooth'
                     });
                     
-                    // Close mobile menu if open
                     if (mobileMenu.classList.contains('active')) {
                         toggleMenu();
                     }
@@ -335,7 +331,7 @@
             });
         });
 
-        // Formspree Submission Logic
+        // Functional Formspree Submission
         const form = document.getElementById('contact-form');
         const status = document.getElementById('form-status');
         const btn = document.getElementById('submit-btn');
@@ -343,7 +339,6 @@
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
             
-            // Show Loading State
             btn.disabled = true;
             btn.innerHTML = '<span class="loading-spinner"></span> Sending...';
             status.className = "hidden";
@@ -373,10 +368,9 @@
                 btn.disabled = false;
                 btn.innerHTML = "<span>Send Inquiry</span>";
                 
-                // Hide status message after 10 seconds
                 setTimeout(() => {
                     status.className = "hidden";
-                }, 10000);
+                }, 8000);
             }
         });
     </script>
