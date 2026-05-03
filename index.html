@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siocon AI Solutions | Premium Virtual Support & Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-warm: #FAF8F5;
+            --bg-section: #F3EFE8;
+            --text-main: #1F1F1F;
+            --text-secondary: #5F5F5F;
+            --accent: #C8A97E;
+            --border: #E8E1D8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-warm);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            letter-spacing: -0.02em;
+        }
+
+        .text-main { color: var(--text-main); }
+        .text-secondary { color: var(--text-secondary); }
+        .text-accent { color: var(--accent); }
+        
+        .btn-primary {
+            background-color: var(--text-main);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            font-weight: 500;
+            font-size: 0.875rem;
+            letter-spacing: 0.025em;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -8px rgba(200, 169, 126, 0.5);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: white;
+        }
+
+        .card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: 0 4px 30px -4px rgba(0, 0, 0, 0.02);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(232, 225, 216, 0.5);
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent);
+        }
+
+        .nav-link {
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-main);
+        }
+
+        .glass-nav {
+            background: rgba(250, 248, 245, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 225, 216, 0.3);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-section);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .hero-shape {
+            background: linear-gradient(135deg, rgba(200, 169, 126, 0.1) 0%, rgba(243, 239, 232, 0.4) 100%);
+            border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%;
+            animation: morph 15s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%; }
+            50% { border-radius: 30% 60% 40% 70% / 50% 40% 30% 60%; }
+            100% { border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%; }
+        }
+
+        .pricing-gradient {
+            background: radial-gradient(circle at center, #FFFFFF 0%, #FAF8F5 100%);
+        }
+
+        #mobile-menu.active {
+            display: block;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fadeUp 0.9s ease forwards;
+        }
+
+        .fade-up-delay-1 {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fadeUp 0.9s ease forwards;
+            animation-delay: 0.12s;
+        }
+
+        .fade-up-delay-2 {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fadeUp 0.9s ease forwards;
+            animation-delay: 0.24s;
+        }
+
+        .fade-up-delay-3 {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: fadeUp 0.9s ease forwards;
+            animation-delay: 0.36s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-card {
+            position: relative;
+            transition: transform 0.45s ease, box-shadow 0.45s ease;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            inset: -18px;
+            background: radial-gradient(circle, rgba(200,169,126,0.22) 0%, rgba(200,169,126,0.08) 40%, transparent 72%);
+            filter: blur(24px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-card-inner {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 60px;
+            height: 520px;
+            background: #ffffff;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 24px 60px -20px rgba(31,31,31,0.18);
+        }
+
+        .hero-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transform: scale(1.05);
+            transition: transform 0.6s ease;
+        }
+
+        .hero-card:hover .hero-image {
+            transform: scale(1.09);
+        }
+
+        @media (max-width: 1024px) {
+            .fade-up,
+            .fade-up-delay-1,
+            .fade-up-delay-2,
+            .fade-up-delay-3 {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center">
+                    <span class="serif text-2xl font-semibold tracking-tight text-main">Siocon AI Solutions</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#contact" class="btn-primary py-3 px-8 text-xs uppercase tracking-widest">Get Support Now</a>
+                </div>
+
+                <button id="menu-toggle" class="md:hidden text-main p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FAF8F5] border-t border-[#E8E1D8] px-6 py-10 shadow-xl">
+            <div class="flex flex-col space-y-8 text-center">
+                <a href="#" class="text-xl font-medium text-main" onclick="toggleMenu()">Home</a>
+                <a href="#services" class="text-xl font-medium text-main" onclick="toggleMenu()">Services</a>
+                <a href="#about" class="text-xl font-medium text-main" onclick="toggleMenu()">About</a>
+                <a href="#contact" class="text-xl font-medium text-main" onclick="toggleMenu()">Contact</a>
+                <a href="#contact" class="btn-primary mx-auto" onclick="toggleMenu()">Get Support Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-24 lg:pt-56 lg:pb-40 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                <div class="lg:w-3/5 text-left fade-up">
+                    <span class="inline-block bg-white border border-[#E8E1D8] px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold text-accent mb-6 shadow-sm fade-up-delay-1">
+                        AI-Powered VA • Founder-Led Support
+                    </span>
+
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-medium text-main leading-[1.05] mb-8 fade-up-delay-2">
+                        AI-Powered Virtual Support for <span class="italic font-normal">Founders</span> Who Want to Scale Without Hiring Full-Time
+                    </h1>
+
+                    <p class="text-secondary text-lg md:text-xl max-w-2xl leading-relaxed mb-12 fade-up-delay-3">
+                        I help busy founders and growing businesses stay on top of admin, operations, project coordination, CRM management, lead generation, and client communication through smart, reliable support, backed by a trained remote team when needed.
+                    </p>
+
+                    <p class="text-sm text-secondary -mt-6 mb-12 fade-up-delay-3">
+                        Supporting founders across admin, operations, and growth so they can focus on scaling.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-6 fade-up-delay-3">
+                        <a href="#contact" class="btn-primary w-full sm:w-auto">Get Support Now</a>
+                        <a href="#services" class="btn-secondary w-full sm:w-auto">View Services</a>
+                    </div>
+                </div>
+
+                <div class="lg:w-2/5 relative hidden lg:block fade-up-delay-2">
+                    <div class="hero-shape w-[480px] h-[480px] absolute -top-12 -right-12"></div>
+
+                    <div class="hero-card">
+                        <div class="hero-card-inner">
+                            <img
+                                src="/janice-siocon.png"
+                                alt="Janice Siocon"
+                                class="hero-image"
+                            />
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+
+                            <div class="absolute bottom-10 left-10 right-10 p-8 bg-white/82 backdrop-blur-md rounded-3xl border border-white/20">
+                                <p class="serif text-lg italic text-main mb-4">"We help you build better systems so you can focus on the vision."</p>
+                                <p class="text-[10px] uppercase tracking-widest font-bold text-accent">Siocon AI Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Strip -->
+    <div class="border-y border-[#E8E1D8] py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <span class="text-accent mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></span>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Flexible support when you need it</p>
+                </div>
+                <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <span class="text-accent mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></span>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">AI-assisted workflows for efficiency</p>
+                </div>
+                <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <span class="text-accent mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg></span>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Reliable communication & follow-through</p>
+                </div>
+                <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <span class="text-accent mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></span>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Support that grows with your business</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 lg:py-32 bg-[#F3EFE8]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24 max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">Support designed to help your business run smoothly</h2>
+                <div class="h-1 w-20 bg-accent mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <div class="card">
+                    <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-4">Email & Calendar Management</h3>
+                    <p class="text-secondary leading-relaxed text-sm">Stay on top of inboxes, schedules, and follow-ups so nothing gets missed in your daily rush.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-4">Project & CRM Management</h3>
+                    <p class="text-secondary leading-relaxed text-sm">Manage projects and pipelines using tools like Monday.com to keep everything organised and on track.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-4">Operations & Admin Support</h3>
+                    <p class="text-secondary leading-relaxed text-sm">Handle day-to-day operations and coordination so your business runs smoothly behind the scenes.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-4">Lead Gen & Outreach</h3>
+                    <p class="text-secondary leading-relaxed text-sm">Build targeted prospect lists and support outreach campaigns with consistent follow-up tracking.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-4">Customer Support & Success</h3>
+                    <p class="text-secondary leading-relaxed text-sm">Respond to enquiries promptly and maintain consistent communication with your leads and clients.</p>
+                </div>
+
+                <div class="card">
+                    <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-4">Chatbot & Simple Automation</h3>
+                    <p class="text-secondary leading-relaxed text-sm">Set up practical chatbot workflows and automations to capture leads and reduce repetitive manual work.</p>
+                </div>
+            </div>
+
+            <div class="max-w-xl mx-auto">
+                <div class="card text-center py-10">
+                    <div class="service-icon mx-auto"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg></div>
+                    <h3 class="text-xl font-semibold mb-2">Simple Website Setup</h3>
+                    <p class="text-secondary text-sm mb-6">Create clean, modern landing pages to showcase services and generate new enquiries.</p>
+                    <div class="pt-6 border-t border-[#E8E1D8] inline-block">
+                        <p class="text-main font-semibold">Flexible support from <span class="text-7xl font-semibold mx-4 tracking-tighter" style="background: linear-gradient(135deg, #C8A97E, #E6D3B3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">$10</span> <span class="text-xs uppercase tracking-widest font-bold">USD/HR</span></p>
+                        <p class="text-[10px] text-secondary mt-1 uppercase tracking-widest">Tailored to your business needs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <span class="text-accent uppercase tracking-[0.25em] text-[10px] font-bold mb-6 block">Interactive Demo</span>
+            <h2 class="text-3xl md:text-4xl font-semibold mb-6">Try My AI Assistant</h2>
+            <p class="text-secondary mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
+                I’ve also built a simple AI assistant that helps answer questions about virtual assistant services, workflows, and getting started.
+            </p>
+            <a href="https://janice-ai-va-coach.vercel.app/" target="_blank" class="btn-primary">
+                Try the AI Assistant
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-end justify-between mb-20 gap-8">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-semibold">Why businesses choose to work with us</h2>
+                </div>
+                <div class="lg:w-1/3">
+                    <p class="text-secondary">We combine human intuition with AI efficiency to deliver results that typical virtual assistants can't match.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-10 rounded-[32px] border border-[#E8E1D8] hover:border-accent transition-colors duration-500">
+                    <h4 class="text-main font-semibold mb-4">Flexible Support</h4>
+                    <p class="text-sm text-secondary leading-relaxed">Hourly support with no long-term commitment. Scale up or down based on your workload.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] border border-[#E8E1D8] hover:border-accent transition-colors duration-500">
+                    <h4 class="text-main font-semibold mb-4">AI Efficiency</h4>
+                    <p class="text-sm text-secondary leading-relaxed">AI-assisted workflows to improve speed, accuracy, and overall operational efficiency.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] border border-[#E8E1D8] hover:border-accent transition-colors duration-500">
+                    <h4 class="text-main font-semibold mb-4">Reliable Delivery</h4>
+                    <p class="text-sm text-secondary leading-relaxed">Clear communication and consistent follow-through. We treat your business like our own.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] border border-[#E8E1D8] hover:border-accent transition-colors duration-500">
+                    <h4 class="text-main font-semibold mb-4">Team Scalability</h4>
+                    <p class="text-sm text-secondary leading-relaxed">Dedicated support from Janice, with a trained remote backup team ready when you need to grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 lg:py-40 bg-[#F3EFE8] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <div class="lg:w-1/2">
+                    <div class="relative max-w-md mx-auto">
+                        <div class="relative h-[420px] bg-white rounded-[60px] shadow-2xl overflow-hidden border border-white/40 hover:shadow-[0_0_40px_rgba(0,0,0,0.15)] transition duration-500">
+                            <img
+                                src="/janice-siocon.png"
+                                alt="Janice Siocon"
+                                class="w-full h-full object-cover object-top scale-[1.02]"
+                            />
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                        </div>
+
+                        <div class="absolute bottom-6 right-6 bg-white p-6 rounded-3xl shadow-xl border border-[#E8E1D8] max-w-[220px]">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-secondary">Based in Philippines</span>
+                            </div>
+                            <p class="text-xs text-main font-medium italic">"Dedicated to making your day-to-day work lighter."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <span class="text-accent uppercase tracking-[0.2em] text-[11px] font-bold mb-6 block">The Founder</span>
+                    <h2 class="text-4xl md:text-5xl font-semibold mb-10 leading-tight">Meet Janice Siocon</h2>
+                    <div class="space-y-6 text-secondary text-lg leading-relaxed">
+                        <p>I’m a virtual assistant and AI-focused support professional based in the Philippines. I work closely with founders, consultants, and growing businesses to streamline operations and improve workflows through dependable remote support.</p>
+                        <p>With experience in admin, project coordination, CRM management, lead generation, and chatbot setup, I focus on making your day-to-day work lighter so you can focus on growing your business.</p>
+                        <p>When needed, I am supported by a small, trained remote team to ensure consistent delivery and reliable support as your workload increases.</p>
+                    </div>
+                    
+                    <div class="mt-12 flex flex-wrap gap-3">
+                        <span class="px-5 py-2 rounded-full bg-white text-main text-[11px] font-bold uppercase tracking-wider border border-[#E8E1D8]">AI-Assisted Support</span>
+                        <span class="px-5 py-2 rounded-full bg-white text-main text-[11px] font-bold uppercase tracking-wider border border-[#E8E1D8]">Project & CRM coordination</span>
+                        <span class="px-5 py-2 rounded-full bg-white text-main text-[11px] font-bold uppercase tracking-wider border border-[#E8E1D8]">Automation & Chatbots</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="pricing-gradient max-w-4xl mx-auto rounded-[60px] border border-[#E8E1D8] p-12 lg:p-24 text-center shadow-sm">
+                <span class="text-accent uppercase tracking-[0.25em] text-[10px] font-bold mb-6 block">Investment</span>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">Simple, flexible support</h2>
+                <div class="flex items-baseline justify-center mb-8">
+                    <span class="text-secondary text-xl font-light italic">from</span>
+                    <span class="text-7xl font-semibold mx-4 tracking-tighter" style="background: linear-gradient(135deg, #C8A97E, #E6D3B3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        $10
+                    </span>
+                    <span class="text-secondary text-lg">USD / hr</span>
+                </div>
+                <p class="text-secondary text-lg max-w-lg mx-auto leading-relaxed mb-12">No full-time hire required. Get premium support when you need it and scale seamlessly as your workload grows.</p>
+                <a href="#contact" class="btn-primary">Get Support Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-32 bg-[#1F1F1F] text-white overflow-hidden relative">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-tight">Ready to free up hours each week?</h2>
+            <p class="text-gray-400 text-lg mb-12 max-w-xl mx-auto">Let’s talk about where you need support and how I can help you reclaim your time.</p>
+            <a href="#contact" class="inline-block bg-[#C8A97E] hover:bg-white hover:text-[#1F1F1F] text-white py-5 px-12 rounded-full font-bold uppercase tracking-widest text-sm transition-all duration-500">
+                Get Support Now
+            </a>
+        </div>
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100" stroke="white" fill="transparent" stroke-width="0.1" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-24">
+                <div class="lg:w-1/3">
+                    <h2 class="text-4xl font-semibold mb-8">Let's Connect</h2>
+                    <p class="text-secondary text-lg leading-relaxed mb-12">I'd love to hear more about your business challenges. Use the form or contact me directly via LinkedIn or WhatsApp.</p>
+                    
+                    <div class="space-y-10">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-12 h-12 rounded-2xl bg-[#F3EFE8] flex items-center justify-center text-accent flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="1.5"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest font-bold text-secondary mb-1">Email</p>
+                                <a href="mailto:janice@sioconaisolutions.com" class="text-lg font-medium hover:text-accent transition-colors">janice@sioconaisolutions.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-6">
+                            <div class="w-12 h-12 rounded-2xl bg-[#F3EFE8] flex items-center justify-center text-accent flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-width="1.5"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest font-bold text-secondary mb-1">WhatsApp</p>
+                                <a href="https://wa.me/639955212679" class="text-lg font-medium hover:text-accent transition-colors">+63 995 521 2679</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-6">
+                            <div class="w-12 h-12 rounded-2xl bg-[#F3EFE8] flex items-center justify-center text-accent flex-shrink-0">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest font-bold text-secondary mb-1">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/janice-siocon-016a2211a/" class="text-lg font-medium hover:text-accent transition-colors">Janice Siocon</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/3">
+                    <div class="bg-white p-10 lg:p-16 rounded-[60px] shadow-sm border border-[#E8E1D8]">
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+                                <div class="relative">
+                                    <label class="text-[10px] uppercase tracking-widest font-bold text-secondary mb-4 block">Full Name</label>
+                                    <input type="text" required class="w-full bg-[#FAF8F5] border border-[#E8E1D8] rounded-2xl px-6 py-5 focus:outline-none focus:border-accent transition-colors">
+                                </div>
+                                <div class="relative">
+                                    <label class="text-[10px] uppercase tracking-widest font-bold text-secondary mb-4 block">Email Address</label>
+                                    <input type="email" required class="w-full bg-[#FAF8F5] border border-[#E8E1D8] rounded-2xl px-6 py-5 focus:outline-none focus:border-accent transition-colors">
+                                </div>
+                            </div>
+                            <div class="mb-12">
+                                <label class="text-[10px] uppercase tracking-widest font-bold text-secondary mb-4 block">Message</label>
+                                <textarea rows="6" required class="w-full bg-[#FAF8F5] border border-[#E8E1D8] rounded-2xl px-6 py-5 focus:outline-none focus:border-accent transition-colors"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full py-6 uppercase tracking-widest text-xs font-bold">Send Enquiry</button>
+                            <p id="form-msg" class="hidden mt-8 text-center text-green-600 font-medium bg-green-50 py-4 rounded-2xl border border-green-100">Message received. We'll be in touch shortly.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-[#E8E1D8] bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-12">
+                <div>
+                    <h3 class="serif text-3xl font-semibold mb-3">Siocon AI Solutions</h3>
+                    <p class="text-xs text-secondary uppercase tracking-[0.2em] font-medium">Smart support for ambitious founders.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-12">
+                    <a href="https://www.linkedin.com/in/janice-siocon-016a2211a/" class="text-sm text-secondary hover:text-accent">LinkedIn</a>
+                    <a href="https://wa.me/639955212679" class="text-sm text-secondary hover:text-accent">WhatsApp</a>
+                    <a href="mailto:janice@sioconaisolutions.com" class="text-sm text-secondary hover:text-accent">janice@sioconaisolutions.com</a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-[#E8E1D8] text-[10px] text-secondary tracking-widest uppercase font-bold gap-6">
+                <div class="text-center md:text-left">
+                    &copy; <span id="year"></span> Siocon AI Solutions. Created by Janice Siocon.
+                </div>
+                <div class="flex space-x-10">
+                    <span class="hover:text-accent cursor-pointer">Privacy Policy</span>
+                    <span class="hover:text-accent cursor-pointer">Terms</span>
+                </div>
+                <div>All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('active');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const msg = document.getElementById('form-msg');
+            msg.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => { msg.classList.add('hidden'); }, 6000);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const element = document.querySelector(targetId);
+                if (element) {
+                    const headerOffset = 90;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
