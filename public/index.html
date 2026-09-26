@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siocon AI Solutions | Premium Virtual Support & Automation</title>
+    <title>Siocon AI Solutions | Remote Business Support & Filipino Talent Sourcing</title>
+    <meta name="description" content="Hands-on remote business support from Janice Siocon, plus sourcing of skilled, tech-savvy and AI-proficient Filipino professionals for growing businesses.">
+    <link rel="canonical" href="https://sioconaisolutions.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Siocon AI Solutions | Remote Business Support & Filipino Talent Sourcing">
+    <meta property="og:description" content="Remote business support and Filipino talent sourcing for growing businesses.">
+    <meta property="og:url" content="https://sioconaisolutions.com/">
+    <meta property="og:image" content="https://sioconaisolutions.com/janice-siocon.png">
+    <meta property="og:image:alt" content="Janice Siocon, founder of Siocon AI Solutions">
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@graph":[
+        {
+          "@type":"Organization",
+          "@id":"https://sioconaisolutions.com/#organization",
+          "name":"Siocon AI Solutions",
+          "url":"https://sioconaisolutions.com/",
+          "founder":{"@id":"https://sioconaisolutions.com/#janice"},
+          "email":"janice@sioconaisolutions.com",
+          "telephone":"+639955212679",
+          "sameAs":["https://www.linkedin.com/in/janicesiocon1218/"],
+          "areaServed":"Remote"
+        },
+        {
+          "@type":"Person",
+          "@id":"https://sioconaisolutions.com/#janice",
+          "name":"Janice Siocon",
+          "jobTitle":"Founder, Remote Business Support & Talent Sourcing",
+          "worksFor":{"@id":"https://sioconaisolutions.com/#organization"},
+          "sameAs":["https://www.linkedin.com/in/janicesiocon1218/"]
+        }
+      ]
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +46,11 @@
         :root {
             --bg-warm: #FAF8F5;
             --bg-section: #F3EFE8;
-            --text-main: #1F1F1F;
-            --text-secondary: #5F5F5F;
+            --text-main: #213B31;
+            --text-secondary: #526257;
             --accent: #C8A97E;
+            --green: #213B31;
+            --accent-deep: #A98247;
             --border: #E8E1D8;
         }
 
@@ -38,7 +74,7 @@
         .text-accent { color: var(--accent); }
         
         .btn-primary {
-            background-color: var(--text-main);
+            background-color: var(--green);
             color: white;
             padding: 1rem 2.5rem;
             border-radius: 9999px;
@@ -240,6 +276,17 @@
                 animation: none;
             }
         }
+
+        /* Siocon AI Solutions 2026 identity: warm cream, muted gold, deep green */
+        .serif, h1, h2, h3 { color: var(--green); }
+        .bg-\[\#213B31\] h2,
+        .bg-\[\#213B31\] h3,
+        .bg-\[\#213B31\] .serif { color: white; }
+        .text-accent { color: var(--accent-deep); }
+        .btn-primary { background-color: var(--green); }
+        .btn-primary:hover { background-color: var(--accent-deep); }
+        .service-icon { color: var(--accent-deep); }
+
     </style>
 </head>
 <body class="antialiased">
@@ -255,9 +302,10 @@
                 <div class="hidden md:flex items-center space-x-10">
                     <a href="#" class="nav-link">Home</a>
                     <a href="#services" class="nav-link">Services</a>
+                    <a href="#talent" class="nav-link">Find Talent</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                    <a href="#contact" class="btn-primary py-3 px-8 text-xs uppercase tracking-widest">Get Support Now</a>
+                    <a href="#contact" class="btn-primary py-3 px-8 text-xs uppercase tracking-widest">Let’s Talk</a>
                 </div>
 
                 <button id="menu-toggle" class="md:hidden text-main p-2">
@@ -272,9 +320,10 @@
             <div class="flex flex-col space-y-8 text-center">
                 <a href="#" class="text-xl font-medium text-main" onclick="toggleMenu()">Home</a>
                 <a href="#services" class="text-xl font-medium text-main" onclick="toggleMenu()">Services</a>
+                <a href="#talent" class="text-xl font-medium text-main" onclick="toggleMenu()">Find Talent</a>
                 <a href="#about" class="text-xl font-medium text-main" onclick="toggleMenu()">About</a>
                 <a href="#contact" class="text-xl font-medium text-main" onclick="toggleMenu()">Contact</a>
-                <a href="#contact" class="btn-primary mx-auto" onclick="toggleMenu()">Get Support Now</a>
+                <a href="#contact" class="btn-primary mx-auto" onclick="toggleMenu()">Let’s Talk</a>
             </div>
         </div>
     </nav>
@@ -285,24 +334,24 @@
             <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
                 <div class="lg:w-3/5 text-left fade-up">
                     <span class="inline-block bg-white border border-[#E8E1D8] px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold text-accent mb-6 shadow-sm fade-up-delay-1">
-                        AI-Powered VA • Founder-Led Support
+                        Remote Business Support • Talent Sourcing • Philippines
                     </span>
 
                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-medium text-main leading-[1.05] mb-8 fade-up-delay-2">
-                        AI-Powered Virtual Support for <span class="italic font-normal">Founders</span> Who Want to Scale Without Hiring Full-Time
+                        Work with me. <span class="italic font-normal text-accent">Or let me find</span> your next right hand.
                     </h1>
 
                     <p class="text-secondary text-lg md:text-xl max-w-2xl leading-relaxed mb-12 fade-up-delay-3">
-                        I help busy founders and growing businesses stay on top of admin, operations, project coordination, CRM management, lead generation, and client communication through smart, reliable support, backed by a trained remote team when needed.
+                        I'm Janice Siocon. I provide hands-on remote business support and help growing businesses find skilled, tech-savvy Filipino professionals when it's time to expand their team.
                     </p>
 
                     <p class="text-sm text-secondary -mt-6 mb-12 fade-up-delay-3">
-                        Supporting founders across admin, operations, and growth so they can focus on scaling.
+                        Work directly with me for hands-on support, or ask me to source and pre-screen remote talent around your role, tools and workflow requirements.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center gap-6 fade-up-delay-3">
-                        <a href="#contact" class="btn-primary w-full sm:w-auto">Get Support Now</a>
-                        <a href="#services" class="btn-secondary w-full sm:w-auto">View Services</a>
+                        <a href="#contact" class="btn-primary w-full sm:w-auto">Hire me as your VA</a>
+                        <a href="#talent" class="btn-secondary w-full sm:w-auto">Find Talent</a>
                     </div>
                 </div>
 
@@ -312,15 +361,15 @@
                     <div class="hero-card">
                         <div class="hero-card-inner">
                             <img
-                                src="/janice-siocon.png"
-                                alt="Janice Siocon"
+                                src="janice-siocon.png" onerror="if(!this.dataset.fallback){this.dataset.fallback='jpeg';this.src='janice-siocon.jpeg';}else if(this.dataset.fallback==='jpeg'){this.dataset.fallback='jpg';this.src='janice-siocon.jpg';}"
+                                alt="Janice Siocon, founder of Siocon AI Solutions"
                                 class="hero-image"
                             />
 
                             <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
 
                             <div class="absolute bottom-10 left-10 right-10 p-8 bg-white/82 backdrop-blur-md rounded-3xl border border-white/20">
-                                <p class="serif text-lg italic text-main mb-4">"We help you build better systems so you can focus on the vision."</p>
+                                <p class="serif text-lg italic text-main mb-4">"Reliable support for the work on your plate, and the right people when you’re ready to grow."</p>
                                 <p class="text-[10px] uppercase tracking-widest font-bold text-accent">Siocon AI Solutions</p>
                             </div>
                         </div>
@@ -336,19 +385,19 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
                 <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                     <span class="text-accent mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></span>
-                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Flexible support when you need it</p>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Work directly with Janice · $12/hour</p>
                 </div>
                 <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                     <span class="text-accent mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></span>
-                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">AI-assisted workflows for efficiency</p>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Adapt to your existing systems</p>
                 </div>
                 <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                     <span class="text-accent mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg></span>
-                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Reliable communication & follow-through</p>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Practical workflows & automation</p>
                 </div>
                 <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                     <span class="text-accent mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></span>
-                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Support that grows with your business</p>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-secondary">Remote talent sourcing · $500 on engagement</p>
                 </div>
             </div>
         </div>
@@ -372,7 +421,7 @@
                 <div class="card">
                     <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-4">Project & CRM Management</h3>
-                    <p class="text-secondary leading-relaxed text-sm">Manage projects and pipelines using tools like Monday.com to keep everything organised and on track.</p>
+                    <p class="text-secondary leading-relaxed text-sm">Manage projects and pipelines using tools such as HubSpot, ClickUp and Monday.com to keep work organised and moving.</p>
                 </div>
 
                 <div class="card">
@@ -384,7 +433,7 @@
                 <div class="card">
                     <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-4">Lead Gen & Outreach</h3>
-                    <p class="text-secondary leading-relaxed text-sm">Build targeted prospect lists and support outreach campaigns with consistent follow-up tracking.</p>
+                    <p class="text-secondary leading-relaxed text-sm">Prospect research, contact sourcing, list building, CRM management, outreach campaigns and follow-up tracking.</p>
                 </div>
 
                 <div class="card">
@@ -395,20 +444,59 @@
 
                 <div class="card">
                     <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
-                    <h3 class="text-xl font-semibold mb-4">Chatbot & Simple Automation</h3>
-                    <p class="text-secondary leading-relaxed text-sm">Set up practical chatbot workflows and automations to capture leads and reduce repetitive manual work.</p>
+                    <h3 class="text-xl font-semibold mb-4">Workflows & Automation</h3>
+                    <p class="text-secondary leading-relaxed text-sm">Work within your existing systems, or identify practical opportunities for more efficient workflows, automation and integrations.</p>
                 </div>
             </div>
 
-            <div class="max-w-xl mx-auto">
-                <div class="card text-center py-10">
-                    <div class="service-icon mx-auto"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg></div>
-                    <h3 class="text-xl font-semibold mb-2">Simple Website Setup</h3>
-                    <p class="text-secondary text-sm mb-6">Create clean, modern landing pages to showcase services and generate new enquiries.</p>
-                    <div class="pt-6 border-t border-[#E8E1D8] inline-block">
-                        <p class="text-main font-semibold">Flexible support from <span class="text-7xl font-semibold mx-4 tracking-tighter" style="background: linear-gradient(135deg, #C8A97E, #E6D3B3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">$10</span> <span class="text-xs uppercase tracking-widest font-bold">USD/HR</span></p>
-                        <p class="text-[10px] text-secondary mt-1 uppercase tracking-widest">Tailored to your business needs</p>
+            <div class="mt-20 bg-[#213B31] text-white rounded-[32px] p-8 lg:p-12">
+                <span class="text-[#D9BE87] uppercase tracking-[0.25em] text-[10px] font-bold mb-5 block">TOOLS & MODERN WORKFLOWS</span>
+                <h3 class="text-3xl font-semibold mb-4 text-white">Tools that help the work move.</h3>
+                <p class="text-white/75 text-sm leading-relaxed mb-8 max-w-3xl">I adapt to the systems your team already uses. When a better workflow or automation is needed, I can help identify practical ways to reduce repetitive work and improve follow-through.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="border border-white/20 rounded-2xl p-5"><strong>AI & Research</strong><p class="text-white/70 mt-2">ChatGPT · Claude · Perplexity · Gemini</p></div>
+                    <div class="border border-white/20 rounded-2xl p-5"><strong>CRM, Sales & Lead Generation</strong><p class="text-white/70 mt-2">HubSpot · GoHighLevel (GHL) · Apollo · Seamless.AI · LinkedIn Sales Navigator</p></div>
+                    <div class="border border-white/20 rounded-2xl p-5"><strong>Projects & Operations</strong><p class="text-white/70 mt-2">ClickUp · Monday.com · Google Workspace</p></div>
+                    <div class="border border-white/20 rounded-2xl p-5"><strong>Automation & Workflows</strong><p class="text-white/70 mt-2">Google Apps Script · Zapier · Make · AI integrations</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talent Sourcing Section -->
+    <section id="talent" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <span class="text-accent uppercase tracking-[0.25em] text-[10px] font-bold mb-6 block">REMOTE TALENT SOURCING & PLACEMENT</span>
+                    <h2 class="text-4xl md:text-5xl font-semibold mb-8">Build your team with the right people.</h2>
+                    <p class="text-secondary text-lg leading-relaxed mb-8">Tell me what you need them to do, not just the job title. I source and pre-screen skilled Filipino professionals against your actual requirements, including experience, technology skills, AI capability and the systems your business uses. The goal is to introduce people who can contribute quickly and work effectively in your environment.</p>
+                    <div class="bg-[#F3EFE8] border border-[#E8E1D8] rounded-2xl p-5 mb-7">
+                        <p class="text-sm leading-relaxed text-[#213B31]"><strong>You don't get a one-size-fits-all VA.</strong> I source around your requirements, whether you need someone to step into an established workflow or a specialist who can help build a better one.</p>
                     </div>
+                    <ul class="space-y-3 text-secondary text-sm">
+                        <li>✓ Executive Assistants and right-hands</li>
+                        <li>✓ Tech Virtual Assistants</li>
+                        <li>✓ AI Automation Specialists</li>
+                        <li>✓ Construction Virtual Assistants</li>
+                        <li>✓ Estimating / Quantity Surveying support</li>
+                        <li>✓ Project and admin support</li>
+                        <li>✓ Lead generation specialists</li>
+                        <li>✓ Other specialised remote professionals based on your requirements</li>
+                    </ul>
+                </div>
+                <div class="bg-[#F3EFE8] rounded-[32px] p-8 lg:p-12 border border-[#E8E1D8]">
+                    <span class="text-accent uppercase tracking-[0.2em] text-[10px] font-bold">ONE-TIME PLACEMENT FEE</span>
+                    <div class="mt-4 mb-5"><span class="serif text-6xl font-semibold text-[#213B31]">$500</span> <span class="text-secondary">USD</span></div>
+                    <p class="text-secondary leading-relaxed mb-6">Pay only when you engage someone I introduce. You can review and interview suitable candidates before deciding.</p>
+                    <div class="space-y-4 text-sm text-secondary leading-relaxed mb-8">
+                        <p><strong class="text-main">Matched to your requirements.</strong> Skills, experience, tools and working style are considered before I put someone forward.</p>
+                        <p><strong class="text-main">AI-proficient and tech-savvy.</strong> Depending on the role, candidates may already work confidently with modern AI, CRM, project and automation platforms.</p>
+                        <p><strong class="text-main">Adaptable to your workflow.</strong> They can work within your existing systems or, where the role requires it, help improve or create new workflows, SOPs, automations and integrations.</p>
+                        <p><strong class="text-main">Ready to contribute quickly.</strong> I screen around the actual work you need rather than matching candidates by job title alone.</p>
+                        <p class="pt-2"><strong class="text-main">Different roles require different capabilities.</strong> An AI-proficient EA or Tech VA may use AI and digital tools effectively in day-to-day work, while an AI Automation Specialist can build workflows, integrations and automations when deeper technical support is needed.</p>
+                    </div>
+                    <a href="#contact" class="btn-primary">Talk about a role</a>
                 </div>
             </div>
         </div>
@@ -433,10 +521,10 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-end justify-between mb-20 gap-8">
                 <div class="lg:w-1/2">
-                    <h2 class="text-4xl md:text-5xl font-semibold">Why businesses choose to work with us</h2>
+                    <h2 class="text-4xl md:text-5xl font-semibold">Two ways to get the support your business needs</h2>
                 </div>
                 <div class="lg:w-1/3">
-                    <p class="text-secondary">We combine human intuition with AI efficiency to deliver results that typical virtual assistants can't match.</p>
+                    <p class="text-secondary">Work directly with me for hands-on support, or let me help you find skilled remote professionals for your team.</p>
                 </div>
             </div>
 
@@ -446,16 +534,16 @@
                     <p class="text-sm text-secondary leading-relaxed">Hourly support with no long-term commitment. Scale up or down based on your workload.</p>
                 </div>
                 <div class="bg-white p-10 rounded-[32px] border border-[#E8E1D8] hover:border-accent transition-colors duration-500">
-                    <h4 class="text-main font-semibold mb-4">AI Efficiency</h4>
-                    <p class="text-sm text-secondary leading-relaxed">AI-assisted workflows to improve speed, accuracy, and overall operational efficiency.</p>
+                    <h4 class="text-main font-semibold mb-4">Modern Workflows</h4>
+                    <p class="text-sm text-secondary leading-relaxed">Practical use of modern tools, automation and AI where they genuinely improve the work.</p>
                 </div>
                 <div class="bg-white p-10 rounded-[32px] border border-[#E8E1D8] hover:border-accent transition-colors duration-500">
                     <h4 class="text-main font-semibold mb-4">Reliable Delivery</h4>
                     <p class="text-sm text-secondary leading-relaxed">Clear communication and consistent follow-through. We treat your business like our own.</p>
                 </div>
                 <div class="bg-white p-10 rounded-[32px] border border-[#E8E1D8] hover:border-accent transition-colors duration-500">
-                    <h4 class="text-main font-semibold mb-4">Team Scalability</h4>
-                    <p class="text-sm text-secondary leading-relaxed">Dedicated support from Janice, with a trained remote backup team ready when you need to grow.</p>
+                    <h4 class="text-main font-semibold mb-4">Talent When You Need It</h4>
+                    <p class="text-sm text-secondary leading-relaxed">When you need another person, I can source and pre-screen skilled Filipino remote professionals matched to the role.</p>
                 </div>
             </div>
         </div>
@@ -469,8 +557,8 @@
                     <div class="relative max-w-md mx-auto">
                         <div class="relative h-[420px] bg-white rounded-[60px] shadow-2xl overflow-hidden border border-white/40 hover:shadow-[0_0_40px_rgba(0,0,0,0.15)] transition duration-500">
                             <img
-                                src="/janice-siocon.png"
-                                alt="Janice Siocon"
+                                src="janice-siocon.png" onerror="if(!this.dataset.fallback){this.dataset.fallback='jpeg';this.src='janice-siocon.jpeg';}else if(this.dataset.fallback==='jpeg'){this.dataset.fallback='jpg';this.src='janice-siocon.jpg';}"
+                                alt="Janice Siocon, founder of Siocon AI Solutions"
                                 class="w-full h-full object-cover object-top scale-[1.02]"
                             />
 
@@ -482,24 +570,24 @@
                                 <div class="w-2 h-2 rounded-full bg-green-500"></div>
                                 <span class="text-[10px] uppercase tracking-widest font-bold text-secondary">Based in Philippines</span>
                             </div>
-                            <p class="text-xs text-main font-medium italic">"Dedicated to making your day-to-day work lighter."</p>
+                            <p class="text-xs text-main font-medium italic">"Practical support. Clear communication. Reliable follow-through."</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:w-1/2">
                     <span class="text-accent uppercase tracking-[0.2em] text-[11px] font-bold mb-6 block">The Founder</span>
-                    <h2 class="text-4xl md:text-5xl font-semibold mb-10 leading-tight">Meet Janice Siocon</h2>
+                    <h2 class="text-4xl md:text-5xl font-semibold mb-10 leading-tight">I've done the work. Now I help businesses find the people who can do it well.</h2>
                     <div class="space-y-6 text-secondary text-lg leading-relaxed">
-                        <p>I’m a virtual assistant and AI-focused support professional based in the Philippines. I work closely with founders, consultants, and growing businesses to streamline operations and improve workflows through dependable remote support.</p>
-                        <p>With experience in admin, project coordination, CRM management, lead generation, and chatbot setup, I focus on making your day-to-day work lighter so you can focus on growing your business.</p>
-                        <p>When needed, I am supported by a small, trained remote team to ensure consistent delivery and reliable support as your workload increases.</p>
+                        <p>I've spent the past three years working remotely with businesses, including hands-on experience as an Executive Assistant and Project Manager in the construction industry. Working closely with business owners and leadership has given me a practical understanding of what CEOs, founders and directors need from the people supporting them.</p>
+                        <p>A strong remote professional is more than a list of skills on a CV. Communication, initiative, reliability, judgement and follow-through matter just as much as technical ability. I've experienced that working relationship from the inside.</p>
+                        <p>As businesses become more AI-enabled, I also look for people who can work confidently with modern technology. Depending on the role, that might mean an Executive Assistant who uses AI effectively, a Tech VA who understands digital systems, or an automation specialist who can build workflows and integrations.</p>
                     </div>
                     
                     <div class="mt-12 flex flex-wrap gap-3">
-                        <span class="px-5 py-2 rounded-full bg-white text-main text-[11px] font-bold uppercase tracking-wider border border-[#E8E1D8]">AI-Assisted Support</span>
-                        <span class="px-5 py-2 rounded-full bg-white text-main text-[11px] font-bold uppercase tracking-wider border border-[#E8E1D8]">Project & CRM coordination</span>
-                        <span class="px-5 py-2 rounded-full bg-white text-main text-[11px] font-bold uppercase tracking-wider border border-[#E8E1D8]">Automation & Chatbots</span>
+                        <span class="px-5 py-2 rounded-full bg-white text-main text-[11px] font-bold uppercase tracking-wider border border-[#E8E1D8]">3 Years Remote Experience</span>
+                        <span class="px-5 py-2 rounded-full bg-white text-main text-[11px] font-bold uppercase tracking-wider border border-[#E8E1D8]">EA & Project Management</span>
+                        <span class="px-5 py-2 rounded-full bg-white text-main text-[11px] font-bold uppercase tracking-wider border border-[#E8E1D8]">AI & Modern Workflows</span>
                     </div>
                 </div>
             </div>
@@ -511,26 +599,26 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="pricing-gradient max-w-4xl mx-auto rounded-[60px] border border-[#E8E1D8] p-12 lg:p-24 text-center shadow-sm">
                 <span class="text-accent uppercase tracking-[0.25em] text-[10px] font-bold mb-6 block">Investment</span>
-                <h2 class="text-4xl md:text-5xl font-semibold mb-8">Simple, flexible support</h2>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-8">Hands-on remote business support</h2>
                 <div class="flex items-baseline justify-center mb-8">
                     <span class="text-secondary text-xl font-light italic">from</span>
                     <span class="text-7xl font-semibold mx-4 tracking-tighter" style="background: linear-gradient(135deg, #C8A97E, #E6D3B3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        $10
+                        $12
                     </span>
                     <span class="text-secondary text-lg">USD / hr</span>
                 </div>
-                <p class="text-secondary text-lg max-w-lg mx-auto leading-relaxed mb-12">No full-time hire required. Get premium support when you need it and scale seamlessly as your workload grows.</p>
-                <a href="#contact" class="btn-primary">Get Support Now</a>
+                <p class="text-secondary text-lg max-w-lg mx-auto leading-relaxed mb-12">Work directly with me for executive support, operations, CRM, research, lead generation, outreach and practical workflow support. No full-time commitment required.</p>
+                <a href="#contact" class="btn-primary">Let’s Talk</a>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 lg:py-32 bg-[#1F1F1F] text-white overflow-hidden relative">
+    <section class="py-24 lg:py-32 bg-[#213B31] text-white overflow-hidden relative">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 class="serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-tight">Ready to free up hours each week?</h2>
-            <p class="text-gray-400 text-lg mb-12 max-w-xl mx-auto">Let’s talk about where you need support and how I can help you reclaim your time.</p>
-            <a href="#contact" class="inline-block bg-[#C8A97E] hover:bg-white hover:text-[#1F1F1F] text-white py-5 px-12 rounded-full font-bold uppercase tracking-widest text-sm transition-all duration-500">
+            <h2 class="serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-tight">Need support, or need to hire?</h2>
+            <p class="text-gray-400 text-lg mb-12 max-w-xl mx-auto">Tell me what you're working on, the support you need, or the role you're looking to fill.</p>
+            <a href="#contact" class="inline-block bg-[#C8A97E] hover:bg-white hover:text-[#213B31] text-white py-5 px-12 rounded-full font-bold uppercase tracking-widest text-sm transition-all duration-500">
                 Get Support Now
             </a>
         </div>
@@ -547,7 +635,7 @@
             <div class="flex flex-col lg:flex-row gap-24">
                 <div class="lg:w-1/3">
                     <h2 class="text-4xl font-semibold mb-8">Let's Connect</h2>
-                    <p class="text-secondary text-lg leading-relaxed mb-12">I'd love to hear more about your business challenges. Use the form or contact me directly via LinkedIn or WhatsApp.</p>
+                    <p class="text-secondary text-lg leading-relaxed mb-12">Tell me about the support or role you need. Use the form or contact me directly via LinkedIn or WhatsApp.</p>
                     
                     <div class="space-y-10">
                         <div class="flex items-start space-x-6">
@@ -574,7 +662,7 @@
                             </div>
                             <div>
                                 <p class="text-[10px] uppercase tracking-widest font-bold text-secondary mb-1">LinkedIn</p>
-                                <a href="https://www.linkedin.com/in/janice-siocon-016a2211a/" class="text-lg font-medium hover:text-accent transition-colors">Janice Siocon</a>
+                                <a href="https://www.linkedin.com/in/janicesiocon1218/" class="text-lg font-medium hover:text-accent transition-colors">Janice Siocon</a>
                             </div>
                         </div>
                     </div>
@@ -614,10 +702,10 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-12">
                 <div>
                     <h3 class="serif text-3xl font-semibold mb-3">Siocon AI Solutions</h3>
-                    <p class="text-xs text-secondary uppercase tracking-[0.2em] font-medium">Smart support for ambitious founders.</p>
+                    <p class="text-xs text-secondary uppercase tracking-[0.2em] font-medium">Remote business support & Filipino talent sourcing.</p>
                 </div>
                 <div class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-12">
-                    <a href="https://www.linkedin.com/in/janice-siocon-016a2211a/" class="text-sm text-secondary hover:text-accent">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/janicesiocon1218/" class="text-sm text-secondary hover:text-accent">LinkedIn</a>
                     <a href="https://wa.me/639955212679" class="text-sm text-secondary hover:text-accent">WhatsApp</a>
                     <a href="mailto:janice@sioconaisolutions.com" class="text-sm text-secondary hover:text-accent">janice@sioconaisolutions.com</a>
                 </div>
@@ -627,10 +715,7 @@
                 <div class="text-center md:text-left">
                     &copy; <span id="year"></span> Siocon AI Solutions. Created by Janice Siocon.
                 </div>
-                <div class="flex space-x-10">
-                    <span class="hover:text-accent cursor-pointer">Privacy Policy</span>
-                    <span class="hover:text-accent cursor-pointer">Terms</span>
-                </div>
+                
                 <div>All rights reserved.</div>
             </div>
         </div>
