@@ -46,10 +46,10 @@
         :root {
             --bg-warm: #FAF8F5;
             --bg-section: #F3EFE8;
-            --text-main: #213B31;
+            --text-main: #365F50;
             --text-secondary: #526257;
             --accent: #C8A97E;
-            --green: #213B31;
+            --green: #365F50;
             --accent-deep: #A98247;
             --border: #E8E1D8;
         }
@@ -122,6 +122,77 @@
             transform: translateY(-10px);
             box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.05);
             border-color: var(--accent);
+        }
+
+        .service-card {
+            cursor: pointer;
+        }
+
+        .service-card.active {
+            border-color: var(--accent-deep);
+            box-shadow: 0 24px 48px -20px rgba(33, 59, 49, 0.22);
+            transform: translateY(-6px);
+        }
+
+        .service-more {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, margin-top 0.35s ease, opacity 0.35s ease;
+            opacity: 0;
+        }
+
+        .service-card.active .service-more {
+            max-height: 220px;
+            margin-top: 1.25rem;
+            opacity: 1;
+        }
+
+        .choice-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 1.25rem;
+            text-align: left;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .choice-card:hover,
+        .choice-card.active {
+            border-color: var(--accent-deep);
+            background: #FFFDF9;
+            box-shadow: 0 18px 34px -24px rgba(33, 59, 49, 0.35);
+            transform: translateY(-3px);
+        }
+
+        .interactive-result {
+            background: #365F50;
+            color: #FFFFFF;
+            border-radius: 28px;
+            padding: 2rem;
+            min-height: 100%;
+        }
+
+        .copy-toast {
+            position: fixed;
+            left: 50%;
+            bottom: 28px;
+            transform: translateX(-50%) translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+            background: #365F50;
+            color: #FFFFFF;
+            border-radius: 9999px;
+            padding: 0.85rem 1.25rem;
+            box-shadow: 0 18px 40px -18px rgba(0,0,0,0.35);
+            transition: all 0.25s ease;
+            z-index: 80;
+            font-size: 0.85rem;
+        }
+
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
 
         .nav-link {
@@ -279,9 +350,9 @@
 
         /* Siocon AI Solutions 2026 identity: warm cream, muted gold, deep green */
         .serif, h1, h2, h3 { color: var(--green); }
-        .bg-\[\#213B31\] h2,
-        .bg-\[\#213B31\] h3,
-        .bg-\[\#213B31\] .serif { color: white; }
+        .bg-\[\#365F50\] h2,
+        .bg-\[\#365F50\] h3,
+        .bg-\[\#365F50\] .serif { color: white; }
         .text-accent { color: var(--accent-deep); }
         .btn-primary { background-color: var(--green); }
         .btn-primary:hover { background-color: var(--accent-deep); }
@@ -412,44 +483,62 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                <div class="card">
+                <div class="card service-card" tabindex="0">
                     <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-4">Email & Calendar Management</h3>
                     <p class="text-secondary leading-relaxed text-sm">Stay on top of inboxes, schedules, and follow-ups so nothing gets missed in your daily rush.</p>
+                    <div class="service-more">
+                        <p class="text-sm text-secondary leading-relaxed border-t border-[#E8E1D8] pt-5">Best for founders who need inbox triage, calendar coordination, meeting reminders and reliable follow-through.</p>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card service-card" tabindex="0">
                     <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-4">Project & CRM Management</h3>
                     <p class="text-secondary leading-relaxed text-sm">Manage projects and pipelines using tools such as HubSpot, ClickUp and Monday.com to keep work organised and moving.</p>
+                    <div class="service-more">
+                        <p class="text-sm text-secondary leading-relaxed border-t border-[#E8E1D8] pt-5">Useful when your team needs cleaner pipelines, task tracking, updates, saved views and practical reporting.</p>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card service-card" tabindex="0">
                     <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-4">Operations & Admin Support</h3>
                     <p class="text-secondary leading-relaxed text-sm">Handle day-to-day operations and coordination so your business runs smoothly behind the scenes.</p>
+                    <div class="service-more">
+                        <p class="text-sm text-secondary leading-relaxed border-t border-[#E8E1D8] pt-5">A fit for recurring admin, document coordination, internal updates, SOP support and keeping open items moving.</p>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card service-card" tabindex="0">
                     <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-4">Lead Gen & Outreach</h3>
                     <p class="text-secondary leading-relaxed text-sm">Prospect research, contact sourcing, list building, CRM management, outreach campaigns and follow-up tracking.</p>
+                    <div class="service-more">
+                        <p class="text-sm text-secondary leading-relaxed border-t border-[#E8E1D8] pt-5">Good for building researched lists, finding decision makers, preparing HubSpot data and tracking outreach batches.</p>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card service-card" tabindex="0">
                     <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-4">Customer Support & Success</h3>
                     <p class="text-secondary leading-relaxed text-sm">Respond to enquiries promptly and maintain consistent communication with your leads and clients.</p>
+                    <div class="service-more">
+                        <p class="text-sm text-secondary leading-relaxed border-t border-[#E8E1D8] pt-5">Helpful for client updates, enquiry replies, follow-up reminders and simple support workflows.</p>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card service-card" tabindex="0">
                     <div class="service-icon"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
                     <h3 class="text-xl font-semibold mb-4">Workflows & Automation</h3>
                     <p class="text-secondary leading-relaxed text-sm">Work within your existing systems, or identify practical opportunities for more efficient workflows, automation and integrations.</p>
+                    <div class="service-more">
+                        <p class="text-sm text-secondary leading-relaxed border-t border-[#E8E1D8] pt-5">Best when repetitive work needs a clearer process, a simple automation, or a better way to connect tools.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="mt-20 bg-[#213B31] text-white rounded-[32px] p-8 lg:p-12">
+            <div class="mt-20 bg-[#365F50] text-white rounded-[32px] p-8 lg:p-12">
                 <span class="text-[#D9BE87] uppercase tracking-[0.25em] text-[10px] font-bold mb-5 block">TOOLS & MODERN WORKFLOWS</span>
                 <h3 class="text-3xl font-semibold mb-4 text-white">Tools that help the work move.</h3>
                 <p class="text-white/75 text-sm leading-relaxed mb-8 max-w-3xl">I adapt to the systems your team already uses. When a better workflow or automation is needed, I can help identify practical ways to reduce repetitive work and improve follow-through.</p>
@@ -472,7 +561,7 @@
                     <h2 class="text-4xl md:text-5xl font-semibold mb-8">Build your team with the right people.</h2>
                     <p class="text-secondary text-lg leading-relaxed mb-8">Tell me what you need them to do, not just the job title. I source and pre-screen skilled Filipino professionals against your actual requirements, including experience, technology skills, AI capability and the systems your business uses. The goal is to introduce people who can contribute quickly and work effectively in your environment.</p>
                     <div class="bg-[#F3EFE8] border border-[#E8E1D8] rounded-2xl p-5 mb-7">
-                        <p class="text-sm leading-relaxed text-[#213B31]"><strong>You don't get a one-size-fits-all VA.</strong> I source around your requirements, whether you need someone to step into an established workflow or a specialist who can help build a better one.</p>
+                        <p class="text-sm leading-relaxed text-[#365F50]"><strong>You don't get a one-size-fits-all VA.</strong> I source around your requirements, whether you need someone to step into an established workflow or a specialist who can help build a better one.</p>
                     </div>
                     <ul class="space-y-3 text-secondary text-sm">
                         <li>✓ Executive Assistants and right-hands</li>
@@ -487,7 +576,7 @@
                 </div>
                 <div class="bg-[#F3EFE8] rounded-[32px] p-8 lg:p-12 border border-[#E8E1D8]">
                     <span class="text-accent uppercase tracking-[0.2em] text-[10px] font-bold">ONE-TIME PLACEMENT FEE</span>
-                    <div class="mt-4 mb-5"><span class="serif text-6xl font-semibold text-[#213B31]">$500</span> <span class="text-secondary">USD</span></div>
+                    <div class="mt-4 mb-5"><span class="serif text-6xl font-semibold text-[#365F50]">$500</span> <span class="text-secondary">USD</span></div>
                     <p class="text-secondary leading-relaxed mb-6">Pay only when you engage someone I introduce. You can review and interview suitable candidates before deciding.</p>
                     <div class="space-y-4 text-sm text-secondary leading-relaxed mb-8">
                         <p><strong class="text-main">Matched to your requirements.</strong> Skills, experience, tools and working style are considered before I put someone forward.</p>
@@ -497,6 +586,56 @@
                         <p class="pt-2"><strong class="text-main">Different roles require different capabilities.</strong> An AI-proficient EA or Tech VA may use AI and digital tools effectively in day-to-day work, while an AI Automation Specialist can build workflows, integrations and automations when deeper technical support is needed.</p>
                     </div>
                     <a href="#contact" class="btn-primary">Talk about a role</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Support Finder -->
+    <section id="support-finder" class="py-24 lg:py-32 bg-[#FAF8F5]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-accent uppercase tracking-[0.25em] text-[10px] font-bold mb-6 block">Interactive Guide</span>
+                <h2 class="text-4xl md:text-5xl font-semibold mb-6">Not sure what kind of support you need?</h2>
+                <p class="text-secondary text-lg leading-relaxed">Choose the closest option below and the page will suggest the best next step.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
+                <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <button type="button" class="choice-card active" data-choice="janice">
+                        <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">Option 1</span>
+                        <h3 class="text-xl font-semibold mt-3 mb-3">I need hands-on VA support</h3>
+                        <p class="text-sm text-secondary leading-relaxed">Inbox, admin, CRM, research, project follow-ups or operations support.</p>
+                    </button>
+                    <button type="button" class="choice-card" data-choice="talent">
+                        <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">Option 2</span>
+                        <h3 class="text-xl font-semibold mt-3 mb-3">I want to hire remote talent</h3>
+                        <p class="text-sm text-secondary leading-relaxed">EA, Tech VA, AI-proficient VA, lead generation or specialist remote support.</p>
+                    </button>
+                    <button type="button" class="choice-card" data-choice="workflow">
+                        <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">Option 3</span>
+                        <h3 class="text-xl font-semibold mt-3 mb-3">My workflow feels messy</h3>
+                        <p class="text-sm text-secondary leading-relaxed">You need clearer processes, SOPs, automation ideas or better tool usage.</p>
+                    </button>
+                    <button type="button" class="choice-card" data-choice="unsure">
+                        <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">Option 4</span>
+                        <h3 class="text-xl font-semibold mt-3 mb-3">I am still deciding</h3>
+                        <p class="text-sm text-secondary leading-relaxed">You know you need help, but the role or scope is not fully clear yet.</p>
+                    </button>
+                </div>
+
+                <div class="lg:col-span-2 interactive-result">
+                    <span id="result-label" class="text-[#D9BE87] uppercase tracking-[0.25em] text-[10px] font-bold mb-5 block">Best next step</span>
+                    <h3 id="result-title" class="text-3xl font-semibold mb-5 text-white">Start with Janice directly.</h3>
+                    <p id="result-copy" class="text-white/75 text-sm leading-relaxed mb-8">If you need practical support now, start with hands-on hourly help. This is best for admin, CRM, research, outreach, calendar, coordination and follow-through.</p>
+                    <div class="bg-white/10 border border-white/15 rounded-2xl p-5 mb-6">
+                        <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-3">Suggested message</p>
+                        <p id="result-message" class="text-sm leading-relaxed text-white/85">Hi Janice, I need help with admin, CRM and follow-ups. Can we discuss what support would make sense for my current workload?</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <button type="button" id="copy-message" class="bg-white text-[#365F50] rounded-full px-6 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#D9BE87] transition-colors">Copy Message</button>
+                        <a href="#contact" class="border border-white/25 text-white rounded-full px-6 py-4 text-xs font-bold uppercase tracking-widest text-center hover:bg-white hover:text-[#365F50] transition-colors">Contact Janice</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -614,11 +753,11 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 lg:py-32 bg-[#213B31] text-white overflow-hidden relative">
+    <section class="py-24 lg:py-32 bg-[#365F50] text-white overflow-hidden relative">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             <h2 class="serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-tight">Need support, or need to hire?</h2>
             <p class="text-gray-400 text-lg mb-12 max-w-xl mx-auto">Tell me what you're working on, the support you need, or the role you're looking to fill.</p>
-            <a href="#contact" class="inline-block bg-[#C8A97E] hover:bg-white hover:text-[#213B31] text-white py-5 px-12 rounded-full font-bold uppercase tracking-widest text-sm transition-all duration-500">
+            <a href="#contact" class="inline-block bg-[#C8A97E] hover:bg-white hover:text-[#365F50] text-white py-5 px-12 rounded-full font-bold uppercase tracking-widest text-sm transition-all duration-500">
                 Get Support Now
             </a>
         </div>
@@ -733,6 +872,86 @@
         }
 
         menuToggle.addEventListener('click', toggleMenu);
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            const toggleCard = () => {
+                const isActive = card.classList.contains('active');
+                document.querySelectorAll('.service-card').forEach(item => item.classList.remove('active'));
+                if (!isActive) card.classList.add('active');
+            };
+
+            card.addEventListener('click', toggleCard);
+            card.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleCard();
+                }
+            });
+        });
+
+        const supportOptions = {
+            janice: {
+                title: 'Start with Janice directly.',
+                copy: 'If you need practical support now, start with hands-on hourly help. This is best for admin, CRM, research, outreach, calendar, coordination and follow-through.',
+                message: 'Hi Janice, I need help with admin, CRM and follow-ups. Can we discuss what support would make sense for my current workload?'
+            },
+            talent: {
+                title: 'Ask for matched remote talent.',
+                copy: 'If you need another person on the team, the best route is a short role brief. I can source and pre-screen Filipino professionals based on skills, tools, AI capability and workflow fit.',
+                message: 'Hi Janice, I am looking for remote talent for my business. The role I need help with is [role], and the main tasks are [tasks]. Can you help shortlist suitable candidates?'
+            },
+            workflow: {
+                title: 'Start with a workflow review.',
+                copy: 'If the work feels scattered, the first step is to map the current process and identify what can be simplified, documented, automated or handed over.',
+                message: 'Hi Janice, I need help improving a workflow in my business. The process feels messy around [area], and I would like to see what can be simplified or automated.'
+            },
+            unsure: {
+                title: 'Start with a short discovery chat.',
+                copy: 'If the scope is not clear yet, that is normal. Start by sharing what is taking too much time, what keeps getting delayed and what outcome you want.',
+                message: 'Hi Janice, I know I need support but I am not yet sure what role or setup is best. Can I share what is happening in my business so you can suggest the right next step?'
+            }
+        };
+
+        const resultTitle = document.getElementById('result-title');
+        const resultCopy = document.getElementById('result-copy');
+        const resultMessage = document.getElementById('result-message');
+        const copyMessage = document.getElementById('copy-message');
+        const toast = document.createElement('div');
+        toast.className = 'copy-toast';
+        toast.textContent = 'Message copied';
+        document.body.appendChild(toast);
+
+        document.querySelectorAll('.choice-card').forEach(button => {
+            button.addEventListener('click', () => {
+                const selected = supportOptions[button.dataset.choice];
+                document.querySelectorAll('.choice-card').forEach(item => item.classList.remove('active'));
+                button.classList.add('active');
+                resultTitle.textContent = selected.title;
+                resultCopy.textContent = selected.copy;
+                resultMessage.textContent = selected.message;
+            });
+        });
+
+        copyMessage.addEventListener('click', async () => {
+            const message = resultMessage.textContent;
+
+            try {
+                await navigator.clipboard.writeText(message);
+            } catch (error) {
+                const textarea = document.createElement('textarea');
+                textarea.value = message;
+                textarea.setAttribute('readonly', '');
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            }
+
+            toast.classList.add('show');
+            window.setTimeout(() => toast.classList.remove('show'), 1800);
+        });
 
         const contactForm = document.getElementById('contact-form');
         const formMsg = document.getElementById('form-msg');
